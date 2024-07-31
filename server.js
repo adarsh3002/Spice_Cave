@@ -11,7 +11,7 @@ const JWT_SECRET =
 
 mongoose
   .connect(
-    "mongodb+srv://milind:milind47@cluster0.0auwsv2.mongodb.net/spicedb?retryWrites=true&w=majority",
+    "mongodb+srv://Milind-Palaria:milind47%40iiitl@spice-caves-cluster.sjgydgj.mongodb.net/?retryWrites=true&w=majority&appName=Spice-Caves-Cluster",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -41,7 +41,7 @@ app.post("/api/login", async (req, res) => {
       },
       JWT_SECRET
     );
-    console.log("logged in");
+    // console.log("logged in");
     var uname = user.name;
     var uaddress = user.address;
     return res.json({ status: "ok", data: { token, uname, uaddress } });
@@ -93,9 +93,9 @@ app.post("/api/register", async (req, res) => {
       password,
     });
 
-    console.log("user created succesfuly");
+    // console.log("user created succesfuly");
   } catch (error) {
-    console.log(error)
+    // console.log(error)
     throw error;
   }
   //
@@ -107,6 +107,6 @@ app.post("/api/register", async (req, res) => {
   res.json({ status: "ok", data: { name, address } });
   // console.log(await bcrypt.hash(pass,10))
 });
-app.listen(8000, () => {
+app.listen(3000, () => {
   console.log("server up");
 });
